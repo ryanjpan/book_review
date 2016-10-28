@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Book and its Reviews</title>
+    </head>
+    <body>
+        <a href="{% url 'book:book' %}">Home</a>
+        <p>{{book.title}}</p>
+        <p>{{book.author}}</p>
+        <hr>
+        {% for review in reviews %}
+            <div class="review">
+                {{review.created_at}}
+                <p>{{review.user.first_name}} {{review.user.last_name}}</p>
+                <p>Rating: {{review.rating}}/5 </p>
+                <p>{{review.comment}}</p>
+            </div>
+            <hr>
+        {% endfor %}
+
+    </body>
+</html>

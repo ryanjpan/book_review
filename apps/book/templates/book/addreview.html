@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Add a Review</title>
+    </head>
+    <body>
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+        <a href="{% url 'book:book' %}">Home</a>
+        <form action="{% url 'book:insertreview' %}" method="post">
+            {% csrf_token %}
+            <p>Book Title: <input type="text" name="title"></p>
+            <p>Author: <input type="text" name="author"></p>
+            <p>Review: <textarea name="comment"></textarea></p>
+            <p>
+                Rating:
+                <select name='rating'>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </p>
+            <input type="submit" name="name" value="Add Review">
+        </form>
+    </body>
+</html>

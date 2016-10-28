@@ -1,0 +1,20 @@
+#books{
+    display:inline-block;
+    border-style: solid;
+    border-width: thin;
+    margin-left: 20px;
+    vertical-align: top;
+    margin-top: 50px;
+    height: 300px;
+    width: 200px;
+    overflow-y: scroll;
+    padding: 10px;
+}
+
+#recent{
+    display: inline-block;
+}
+
+#header p{
+    display: inline-block;
+}
